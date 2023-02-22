@@ -4,6 +4,10 @@ from datetime import datetime
 
 url = "http://10.0.0.230/json/state"
 
+current_time = datetime.now().strftime("%H:%M")
+data = {"seg": [{"id": 0, "n": current_time}]}
+response = requests.post(url, json=data)
+
 while True:
     now = datetime.now()
     if now.second == 0:
