@@ -38,13 +38,15 @@ def scraping():
 #Senden der Information an WLED:
 
 url = "http://10.0.0.230/json/state"
-scraping()
-print(ausgabe) #(debug)
-print(len(ausgabe)) #(debug)
 
 while True:
+
+    scraping()
+    print(ausgabe) #(debug)
+    print(len(ausgabe)) #(debug)
+
     if len(ausgabe) <= 32: #checkt, ob der ausgegebe String die maximale Zeichenanzahl eines Segmentnamens nicht übersteigt.
-        scraping()
+
         data = {"seg": [{"id": 0, "n": ausgabe}]}
         response = requests.post(url, json=data)
 
