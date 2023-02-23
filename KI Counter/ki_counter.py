@@ -32,6 +32,8 @@ def scraping():
 
     ausgabe = str(bouldernKurz + " - " + leadKurz)
 
+    print("scrape!") #(debug)
+
 
 
 
@@ -40,8 +42,8 @@ def scraping():
 url = "http://10.0.0.230/json/state"
 
 while True:
-
     scraping()
+
     print(ausgabe) #(debug)
     print(len(ausgabe)) #(debug)
 
