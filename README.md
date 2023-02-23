@@ -1,3 +1,3 @@
 # ESP32-Uhr
 
-Simple Python script that, every minute, sends the current time to a segment name in WLED.
+Einfaches Python Script das, jede Minute, die akutelle Uhrzeit als Name an ein WLED Segment sendet.
