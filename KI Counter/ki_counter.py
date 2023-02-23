@@ -26,13 +26,14 @@ def scraping():
     #Extrahieren von "Freibereich: 000/150"
     freibereich = re.findall(r'Freibereich:\s\d+/\d+', s)[0]
 
-    bouldernKurz = bouldern.replace("Bouldern", "B")
-    leadKurz = lead.replace("Seilklettern", "L")
-    freibereichKurz = freibereich.replace("Freibereich", "Out")
+    bouldernKurz = bouldern.replace("Bouldern: ", "B:")
+    leadKurz = lead.replace("Seilklettern: ", "L:")
+    freibereichKurz = freibereich.replace("Freibereich: ", "Out:")
 
     ausgabe = str(bouldernKurz + " - " + leadKurz)
 
     print("scraped!") #(debug)
+    print(ausgabe)
 
 
 
