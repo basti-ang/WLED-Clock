@@ -32,7 +32,7 @@ def scraping():
 
     ausgabe = str(bouldernKurz + " - " + leadKurz)
 
-    print("scrape!") #(debug)
+    print("scraped!") #(debug)
 
 
 
@@ -44,9 +44,6 @@ url = "http://10.0.0.230/json/state"
 while True:
     scraping()
 
-    print(ausgabe) #(debug)
-    print(len(ausgabe)) #(debug)
-
     if len(ausgabe) <= 32: #checkt, ob der ausgegebe String die maximale Zeichenanzahl eines Segmentnamens nicht übersteigt.
 
         data = {"seg": [{"id": 0, "n": ausgabe}]}
@@ -54,7 +51,7 @@ while True:
 
 
     else:
-        data = {"seg": [{"id": 0, "n": "Error"}]}
+        data = {"seg": [{"id": 0, "n": "Length - Error"}]}
         response = requests.post(url, json=data)
 
     time.sleep(600) #Abfrage alle 10 Minuten
