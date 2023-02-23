@@ -26,20 +26,12 @@ def scraping():
     #Extrahieren von "Freibereich: 000/150"
     freibereich = re.findall(r'Freibereich:\s\d+/\d+', s)[0]
 
-    # Ausgabe der Ergebnisse (debug)
-    #print(bouldern)
-    #print(lead)
-    #print(freibereich)
-
     bouldernKurz = bouldern.replace("Bouldern", "B")
     leadKurz = lead.replace("Seilklettern", "L")
     freibereichKurz = freibereich.replace("Freibereich", "Out")
 
     ausgabe = str(bouldernKurz + " - " + leadKurz)
 
-    # Anzeige der finalen Ausgabe (debug)
-    #print(ausgabe)
-    #print(len(ausgabe))
 
 
 
@@ -48,6 +40,7 @@ def scraping():
 url = "http://10.0.0.230/json/state"
 scraping()
 print(ausgabe) #(debug)
+print(len(ausgabe)) #(debug)
 
 while True:
     if len(ausgabe) <= 32: #checkt, ob der ausgegebe String die maximale Zeichenanzahl eines Segmentnamens nicht übersteigt.
