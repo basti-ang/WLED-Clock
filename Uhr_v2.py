@@ -2,7 +2,7 @@ import requests
 import time
 from datetime import datetime
 
-#Controller Adress 
+#Controller Address 
 
 url = "http://IP.GOES.HERE/json/state"
 
