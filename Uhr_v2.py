@@ -2,17 +2,17 @@ import requests
 import time
 from datetime import datetime
 
-#Adresse von ESP32 WLED 
+#Controller Adress 
 
-url = "http://10.0.0.230/json/state"
+url = "http://IP.GOES.HERE/json/state"
 
-#Erstes ausführen bei Start
+#first update on startup
 
 current_time = datetime.now().strftime("%H:%M")
 data = {"seg": [{"id": 0, "n": current_time}]}
 response = requests.post(url, json=data)
 
-#Loop zu jeder vollen Minute
+#update every full minute
 
 while True:
     now = datetime.now()
